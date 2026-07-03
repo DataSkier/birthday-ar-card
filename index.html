@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Happy Birthday 🎈</title>
+<script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"></script>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background: linear-gradient(180deg, #3b1d4d 0%, #7a3b6b 35%, #d9663f 70%, #f4a24a 100%);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 24px 16px 48px;
+    color: #fff8ee;
+    text-align: center;
+  }
+  h1 {
+    font-size: 1.6rem;
+    margin: 12px 0 4px;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.35);
+  }
+  p.sub {
+    margin: 0 0 20px;
+    opacity: 0.92;
+    font-size: 1rem;
+    max-width: 340px;
+  }
+  model-viewer {
+    width: 100%;
+    max-width: 480px;
+    height: 60vh;
+    max-height: 480px;
+    background: radial-gradient(circle at 50% 30%, rgba(255,255,255,0.10), rgba(255,255,255,0) 65%);
+    border-radius: 20px;
+    --poster-color: transparent;
+  }
+  .ar-btn {
+    margin-top: 18px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #fff8ee;
+    color: #7a3b2e;
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 14px 26px;
+    border-radius: 999px;
+    text-decoration: none;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+  }
+  .msg {
+    margin-top: 28px;
+    max-width: 420px;
+    background: rgba(255,255,255,0.12);
+    border-radius: 16px;
+    padding: 20px 22px;
+    line-height: 1.55;
+    font-size: 1.02rem;
+    backdrop-filter: blur(4px);
+  }
+  .hint {
+    margin-top: 14px;
+    font-size: 0.85rem;
+    opacity: 0.75;
+    max-width: 300px;
+  }
+</style>
+</head>
+<body>
+  <h1>Happy Birthday, Love 🎉</h1>
+  <p class="sub">Tap the model, then tap "View in AR" and point your phone at a table or floor.</p>
+
+  <model-viewer
+    src="amphitheater.glb"
+    ios-src="amphitheater.usdz"
+    alt="A paper-craft pop-up of the amphitheater stage with Jack Johnson, Sep 4th"
+    ar
+    ar-modes="quick-look webxr scene-viewer"
+    camera-controls
+    auto-rotate
+    shadow-intensity="1"
+    exposure="1.1"
+    camera-orbit="15deg 70deg 1.4m"
+  >
+    <button slot="ar-button" class="ar-btn">✨ View in AR</button>
+  </model-viewer>
+
+  <div class="msg">
+    Happy birthday! I couldn't think of a better way to say it than to bring the show to you —
+    see you at the amphitheater on <strong>September 4th</strong> for Jack Johnson. Can't wait
+    to spend the night under the stars with you. I love you. 🎸🌅
+  </div>
+
+  <p class="hint">On iPhone: this opens Apple's built-in AR viewer — no app needed. Just tap "View in AR" above.</p>
+</body>
+</html>
