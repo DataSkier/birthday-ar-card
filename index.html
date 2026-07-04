@@ -72,6 +72,8 @@
 </style>
 </head>
 <body>
+  <button class="music-btn" id="musicBtn" aria-label="Toggle music">🔈</button>
+  <audio id="bgMusic" src="Same%20Girl%20(Album%20Version).mp3" loop preload="none"></audio>
   <h1>Happy Birthday, Boopie Doopie 🎉</h1>
   <p class="sub">Tap the model, then tap "View in AR" and point your phone at a table or floor.</p>
 
@@ -95,5 +97,20 @@
   </div
 
   <p class="hint">On iPhone: this opens Apple's built-in AR viewer — no app needed. Just tap "View in AR" above.</p>
+   <script>
+    const btn = document.getElementById('musicBtn');
+    const audio = document.getElementById('bgMusic');
+    let playing = false;
+    btn.addEventListener('click', () => {
+      if (playing) {
+        audio.pause();
+        btn.textContent = '🔈';
+      } else {
+        audio.play().catch(() => {});
+        btn.textContent = '🔊';
+      }
+      playing = !playing;
+    });
+  </script>
 </body>
 </html>
